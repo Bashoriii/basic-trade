@@ -3,12 +3,20 @@ package database
 import (
 	"database/sql"
 	"fmt"
+	"log"
 	"os"
 
+	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
 
 func DBConnection() *sql.DB {
+
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
 	host := os.Getenv("HOST")
 	port := os.Getenv("PORT")
 	user := os.Getenv("USER")
