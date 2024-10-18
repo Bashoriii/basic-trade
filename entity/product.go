@@ -6,7 +6,7 @@ import (
 
 type Product struct {
 	ID       int       `json:"id"`
-	UUID     int       `json:"uuid"`
+	UUID     string    `json:"uuid"`
 	Name     string    `json:"name" valid:"required~Product name is required"`
 	ImageUrl string    `json:"image_url" valid:"url~Invalid image URL"`
 	AdminID  int       `json:"admin_id"`
