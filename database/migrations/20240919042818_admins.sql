@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS admins (
     uuid UUID DEFAULT uuid_generate_v4(),
     name VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,
-    password VARCHAR(30) NOT NULL,
+    password VARCHAR(90) NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
